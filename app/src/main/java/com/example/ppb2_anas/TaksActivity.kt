@@ -50,6 +50,12 @@ class TaksActivity : AppCompatActivity() {
 
     fun setupRecyclerView() {
         todoAdapter = TodoAdaptor(mutableListOf(), object : TodoAdaptor.TodoItemEvents {
+            override fun onEdit(todo: Todo) {
+                val intent = Intent(this@TaksActivity, EditTodoActivity::class.java)
+                intent.putExtra("to_do_item_id", todo.id)
+                startActivity(intent)
+            }
+
             override fun onDelete(todo: Todo) {
                 val builder = AlertDialog.Builder(this@TaksActivity)
                 builder.setTitle("Konfirmasi Hapus Data")

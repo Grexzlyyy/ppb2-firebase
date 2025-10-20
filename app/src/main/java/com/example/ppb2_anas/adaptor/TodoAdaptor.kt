@@ -31,7 +31,8 @@ class TodoAdaptor (
                     true
                 }
                 view.root.setOnClickListener {
-                    events.onEdit()
+                    events.onEdit(item)
+                    true
                 }
             }
         }
