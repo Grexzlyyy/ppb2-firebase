@@ -7,6 +7,7 @@ import kotlinx.coroutines.tasks.await
 
 class TodoUseCase {
     private val db = Firebase.firestore
+    private val collectionName = "todo" // pastikan konsisten huruf kecil semua
 
     suspend fun getTodo(): List<Todo> {
         return try {
@@ -41,7 +42,7 @@ class TodoUseCase {
                 "description" to todo.description
             )
 
-            val data = db.collection("to doo")
+            val data = db.collection(collectionName)
                 .add(payload)
                 .await()
 
@@ -59,6 +60,22 @@ class TodoUseCase {
                 .await()
         } catch (e: Exception) {
             throw Exception(e.message)
+        }
+    }
+
+    suspend fun updateTodo(todo: Todo) {
+        val payload = hashMapOf(
+            "title" to todo.title,
+            "description" to todo.description
+        )
+
+        try {
+            db.collection("to doo")
+                .document(todo.id)
+                .set(payload)
+                .await()
+        } catch (exc: Exception) {
+            throw Exception("Gagal memperbarui todo: ${exc.message}")
         }
     }
 
