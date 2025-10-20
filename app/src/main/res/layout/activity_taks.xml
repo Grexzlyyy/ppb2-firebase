@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".TaksActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        tools:itemCount="4"
+        tools:listitem="@layout/kotak" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/tombol_tambah"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="Tombol untuk menambah Todo"
+        android:padding="20dp"
+        android:layout_margin="20dp"
+        android:src="@android:color/background_dark"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true" />
+
+
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "884920763205",
+    "project_id": "ppb2-anas",
+    "storage_bucket": "ppb2-anas.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884920763205:android:47888a3d6a122010c9742c",
+        "android_client_info": {
+          "package_name": "com.example.ppb2_anas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884920763205-b9pidcn1hlfbj3vccqpptpm51lr1ignv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ppb2_anas",
+            "certificate_hash": "5484da97104ae1f90396a4347e43597f6ea16610"
+          }
+        },
+        {
+          "client_id": "884920763205-fu2umruv6lj9ffs525dnvssibje3du49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe4ZP1dRFINugL_a7WYvAL9FahJjptPBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884920763205-fu2umruv6lj9ffs525dnvssibje3du49.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
