@@ -2,6 +2,7 @@ package com.example.ppb2_anas
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,25 +23,27 @@ class EditTodoActivity : AppCompatActivity() {
 
         binding = ActivityEditTodoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        setContentView(R.layout.activity_edit_todo)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        todoItemId = intent.getStringExtra("todo_item_id").toString()
+        todoItemId = intent.getStringExtra("to_do_item_id").toString()
         todoUseCase = TodoUseCase()
     }
 
-    fun lostData(){
+    fun loadData(){
         lifecycleScope.launch {
             val todo = todoUseCase.getTodo(todoItemId)
             if (todo == null) {
                 val intent = Intent(this@EditTodoActivity,TaksActivity::class.java)
                 startActivity(intent)
                 finish()
+            }
+
+            if (todo != null) {
+                Log.d("TITLE", todo.title)
             }
 
             binding.title.setText(todo?.title)
@@ -50,5 +53,6 @@ class EditTodoActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        loadData()
     }
 }
