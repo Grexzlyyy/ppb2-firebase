@@ -7,7 +7,7 @@ import kotlinx.coroutines.tasks.await
 
 class TodoUseCase {
     private val db = Firebase.firestore
-    private val collectionName = "todo" // pastikan konsisten huruf kecil semua
+    private val collectionName = "to doo" // pastikan konsisten huruf kecil semua
 
     suspend fun getTodo(): List<Todo> {
         return try {
